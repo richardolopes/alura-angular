@@ -11,7 +11,7 @@ import { Photo } from '../photo/photo';
 export class PhotoListResolver implements Resolve<Observable<Photo>> {
     constructor(private service: PhotoService) { }
 
-    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Photo[]> {
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Photo[]> | any {
         return this.service.listFromUser(route.params.user, 1);
     }
 }
