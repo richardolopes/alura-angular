@@ -7,7 +7,7 @@ const KEY = 'authToken';
 })
 export class TokenService {
   hasToken(): boolean {
-    return !!this.getToken;
+    return !!this.getToken();
   }
 
   setToken(token): void {
