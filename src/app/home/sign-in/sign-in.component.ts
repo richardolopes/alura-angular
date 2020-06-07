@@ -6,7 +6,6 @@ import { PlatformDetectorService } from 'src/app/core/platform-detector/platform
 
 @Component({
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
   public loginForm: FormGroup;
