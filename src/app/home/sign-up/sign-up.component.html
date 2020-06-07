@@ -1,6 +1,8 @@
+<h4 class="text-center">Register</h4>
+
 <form [formGroup]="signupFrom" class="form mt-4" (submit)="singup()">
     <div class="form-group">
-        <input formControlName="email" class="form-control" placeholder="email" autofocus>
+        <input #emailInput formControlName="email" class="form-control" placeholder="email" autofocus>
         <app-vmessage *ngIf="signupFrom.get('email').errors?.required" text="Email is required!">
         </app-vmessage>
         <app-vmessage *ngIf="signupFrom.get('email').errors?.email" text="Invalid e-mail">

@@ -10,9 +10,9 @@ import { PlatformDetectorService } from 'src/app/core/platform-detector/platform
 export class SignInComponent implements OnInit {
   public loginForm: FormGroup;
 
-  @ViewChild('user') userInput: ElementRef<HTMLInputElement>;
+  @ViewChild('userName') userInput: ElementRef<HTMLInputElement>;
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private plaftorm: PlatformDetectorService) { }
+  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private platform: PlatformDetectorService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -33,10 +33,9 @@ export class SignInComponent implements OnInit {
       () => {
         this.router.navigate(['user', user]);
       },
-      (error) => {
-        console.log(error)
+      () => {
         this.loginForm.reset();
-        this.plaftorm.isPlatformBrowser() && this.userInput.nativeElement.focus();
+        this.platform.isPlatformBrowser() && this.userInput.nativeElement.focus();
         alert('Invalid user or password');
       }
     );
