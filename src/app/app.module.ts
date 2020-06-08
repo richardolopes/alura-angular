@@ -7,6 +7,7 @@ import { PhotosModule } from './photos/photos.module';
 import { ErrorsModule } from './errors/errors.module';
 import { HomeModule } from './home/home.module';
 import { CoreModule } from './core/core.module';
+import { ImmediateClickDirective } from './shared/directives/immediate-click/immediate-click.directive';
 
 @NgModule({
   declarations: [
