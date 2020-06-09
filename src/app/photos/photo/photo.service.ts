@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Photo } from './photo';
+import { PhotoComments } from './photo-comments';
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +26,17 @@ export class PhotoService {
         return this.http.post(`${this.endpoint}photos/upload`, formData);
     }
 
-    findById(id: string) {
+    findById(id: number) {
         return this.http.get<Photo>(`${this.endpoint}photos/${id}`);
+    }
+
+    getComments(id: number) {
+        return this.http.get<PhotoComments[]>(`${this.endpoint}photos/${id}/comments`);
+    }
+
+    addComment(id: number, comment: string) {
+        return this.http.post(`${this.endpoint}photos/${id}/comments`, {
+            commentText: comment
+        })
     }
 }
