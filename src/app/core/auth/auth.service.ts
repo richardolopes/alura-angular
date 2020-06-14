@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { UserService } from '../user/user.service';
+import { environment } from 'src/environments/environment';
 
-const URL = 'http://localhost:3000/';
+const URL = environment.api;
 
 @Injectable({
   providedIn: 'root'

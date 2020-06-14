@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
 import { Photo } from './photo';
 import { PhotoComments } from './photo-comments';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PhotoService {
-    readonly endpoint = 'http://localhost:3000/';
+    readonly endpoint = environment.api;
 
     constructor(private http: HttpClient) { }
 
