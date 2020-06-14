@@ -39,4 +39,8 @@ export class PhotoService {
             commentText: comment
         })
     }
+
+    removePhoto(id: number) {
+        return this.http.delete(`${this.endpoint}photos/${id}`)
+    }
 }
