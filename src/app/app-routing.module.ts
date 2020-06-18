@@ -21,17 +21,35 @@ const routes: Routes = [
         path: 'user/:user', component: PhotoListComponent,
         resolve: {
             photos: PhotoListResolver
+        },
+        data: {
+            title: 'Timeline'
         }
     },
-    { path: 'p/add', component: PhotoFormComponent, canActivate: [AuthGuard] },
-    { path: 'p/:photoId', component: PhotoDetailsComponent },
-    { path: 'not-found', component: NotFoundComponent },
+    {
+        path: 'p/add', component: PhotoFormComponent, canActivate: [AuthGuard],
+        data: {
+            title: 'Photo upload'
+        }
+    },
+    {
+        path: 'p/:photoId', component: PhotoDetailsComponent,
+        data: {
+            title: 'Photo details'
+        }
+    },
+    {
+        path: 'not-found', component: NotFoundComponent,
+        data: {
+            title: 'Not found'
+        }
+    },
     { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { useHash: true })
+        RouterModule.forRoot(routes)
     ],
     exports: [
         RouterModule
