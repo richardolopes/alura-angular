@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
     "@types/stacktrace-js": "^2.0.3",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "jwt-decode": "^2.2.0",
     "rxjs": "~6.5.4",
